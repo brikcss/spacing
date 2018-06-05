@@ -1,0 +1,87 @@
+{
+	"name": "@brikcss/spacing",
+	"version": "0.0.1",
+	"description": "Spacing component to make creating spacing variables and classes in CSS easier.",
+	"author": "Brikcss <https://github.com/brikcss>",
+	"contributors": [
+		"The Zimmee <thezimmee@gmail.com>"
+	],
+	"homepage": "https://github.com/brikcss/spacing",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brikcss/spacing.git"
+	},
+	"bugs": {
+		"url": "https://github.com/brikcss/spacing/issues"
+	},
+	"keywords": [
+		"brikcss",
+		"css",
+		"spacing"
+	],
+	"main": "./dist/spacing.init.min.css",
+	"files": [
+		"dist",
+		"src"
+	],
+	"publishConfig": {
+		"tag": "dev",
+		"access": "public"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "NODE_ENV=production node ./node_modules/.bin/pre-commit-lint",
+			"commit-msg": "commitlint -e $HUSKY_GIT_PARAMS && . ./node_modules/.bin/commit-msg-stamp-branch ${HUSKY_GIT_PARAMS}",
+			"pre-push": "npm test && . ./node_modules/.bin/pre-push-check-stage && echo \"\n[ok] Pushing code...\""
+		}
+	},
+	"scripts": {
+		"start": "concurrently --raw \"npm run watch\" \"npm run serve\"",
+		"preci": "npm run build",
+		"ci": "concurrently --raw \"npm run test:lint\" \"npx shots --fail false\"",
+		"pretest": "npm run build",
+		"test": "concurrently \"npm run test:lint\" \"npm run test:coverage\" \"npm run test:ui\"",
+		"test:lint": "concurrently \"npm run lint:js\" \"npm run lint:css\" && echo \"\n[ok] Linter complete.\n\"",
+		"test:unit": "node ./node_modules/.bin/mocha \"./test/*.spec.js\" --reporter=mocha-better-spec-reporter --colors",
+		"test:coverage": "nyc --reporter=lcov --reporter=text mocha \"./test/*.spec.js\" --recursive",
+		"test:submit": "concurrently \"cat coverage/lcov.info | codacy-coverage\" \"cat coverage/lcov.info | coveralls\"",
+		"test:ui": "npx shots",
+		"prebuild": "rimraf dist",
+		"build": "stak --config=.stakcssrc.js:all",
+		"watch": "concurrently \"npm run build -- --watch\" \"watch src/*.js test/*.spec.js --exec='npm run test:unit'\"",
+		"serve": "browser-sync start --config ./.browsersyncrc.js",
+		"lint:css": "node ./node_modules/.bin/stylelint src/**/*.css --format=stylish",
+		"lint:js": "node ./node_modules/.bin/eslint ./src/**/*.js",
+		"semantic-release": "semantic-release"
+	},
+	"devDependencies": {
+		"@brikcss/eslint-config": "0.1.4",
+		"@brikcss/git-hooks": "1.2.0",
+		"@brikcss/merge": "1.0.7",
+		"@brikcss/shots": "0.0.9",
+		"@brikcss/stakcss": "0.8.0",
+		"@brikcss/stakcss-bundler-copy": "0.1.0",
+		"@brikcss/stakcss-bundler-postcss": "0.4.0",
+		"@brikcss/stylelint-config-css": "0.0.7",
+		"@brikcss/watcher-cli": "1.0.0",
+		"@commitlint/cli": "7.0.0",
+		"autoprefixer": "8.6.0",
+		"browser-sync": "2.24.4",
+		"codacy-coverage": "3.0.0",
+		"concurrently": "3.5.1",
+		"coveralls": "3.0.1",
+		"eslint": "4.19.1",
+		"mocha": "5.2.0",
+		"mocha-better-spec-reporter": "3.1.0",
+		"nyc": "12.0.2",
+		"postcss": "6.0.22",
+		"postcss-csso": "3.0.0",
+		"postcss-mixins": "6.2.0",
+		"postcss-reporter": "5.0.0",
+		"prettier": "1.13.4",
+		"rimraf": "2.6.2",
+		"semantic-release": "15.5.0",
+		"stylelint": "9.2.1",
+		"stylelint-formatter-pretty": "1.0.3"
+	}
+}

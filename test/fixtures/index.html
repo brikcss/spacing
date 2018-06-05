@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Brikcss Spacing</title>
+	<link rel="stylesheet" type="text/css" href="../../dist/spacing.init.css">
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+		.boxes {
+			background-color: yellow;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.box {
+			background-color: orange;
+			height: 6rem;
+		}
+		.box__content {
+			background-color: green;
+			text-align: center;
+		}
+		.box__content:before {
+			content: 'content';
+		}
+	</style>
+</head>
+<body>
+
+	<div class="boxes p-1 m-1">
+		<div class="box m-1 p-4 pr-2">
+			<div class="box__content mx-1 mt-2"></div>
+		</div>
+
+		<div class="box m-0-5 p-1 pl-2">
+			<div class="box__content"></div>
+		</div>
+
+		<div class="box ml-2 my-1-5">
+			<div class="box__content py-2 px-0-5"></div>
+		</div>
+
+		<div class="box mt-4 p-4 ml-0-5">
+			<div class="box__content p-0-5 pr-4"></div>
+		</div>
+
+		<div class="box p-0-5 ml-3">
+			<div class="box__content p-4"></div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+/*! spacing.init.css | MIT License | brikcss  <https://github.com/brikcss> */
+
+/** Auto generated classes.
+    ============================================================================================= */
+
+/* stylelint-disable property-no-unknown */
+@mixin spacing {
+	values: 0 0.5rem 1rem 1.5rem 2rem 3rem 4rem;
+	padding: p;
+	margin: m;
+	top: t;
+	bottom: b;
+	left: l;
+	right: r;
+	horizontal: x;
+	vertical: y;
+}
+/* stylelint-enable property-no-unknown */
