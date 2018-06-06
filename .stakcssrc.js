@@ -6,8 +6,8 @@ const postcssPlugins = require('./.postcssrc.js');
 // Config export object.
 let config = {
 	css: {
-		source: 'src/spacing.init.css',
-		output: './dist/spacing.init.css',
+		source: 'src/spacing.css',
+		output: './dist/spacing.css',
 		bundlers: [
 			{
 				run: '@brikcss/stakcss-bundler-postcss',
@@ -20,7 +20,7 @@ let config = {
 
 if (isProd) {
 	config.css_min = Object.assign({}, config.css, {
-		output: './dist/spacing.init.min.css',
+		output: './dist/spacing.min.css',
 		bundlers: [
 			{
 				run: '@brikcss/stakcss-bundler-postcss',

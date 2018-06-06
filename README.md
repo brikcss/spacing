@@ -66,13 +66,13 @@ Spacing component to make creating spacing variables and classes in CSS easier.
 
 2. Include desired file(s) in your app:
 
-	- `./dist/colors.init.css` and `./dist/colors.init.min.css` are precompiled with PostCSS. Include one of these to accept all defaults.
-	- `./src/colors.init.css` is the source CSS. Use this as an example, with the spacing mixin, to generate your own custom classes.
+	- `./dist/spacing.css` and `./dist/spacing.min.css` are precompiled with PostCSS. Include one of these to accept all defaults.
+	- `./src/spacing.css` is the source CSS. Use this as an example, with the spacing mixin, to generate your own custom classes.
 	- `./src/mixins/spacing.js` is the spacing mixin. Use this to generate your own custom classes.
 
 ## Spacing mixin usage
 
-The [colors mixin](./src/mixins/colors.js) allows you to generate your own custom color variables and classes in one easy step. _See [postcss-mixins](https://github.com/postcss/postcss-mixins) for documentation on how to configure and use PostCSS mixins._
+The [spacing mixin](./src/mixins/spacing.js) allows you to generate your own custom spacing classes in one easy step. _See [postcss-mixins](https://github.com/postcss/postcss-mixins) for documentation on how to configure and use PostCSS mixins._
 
 ### Syntax and options
 

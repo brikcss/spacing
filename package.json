@@ -1,6 +1,6 @@
 {
 	"name": "@brikcss/spacing",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Spacing component to make creating spacing variables and classes in CSS easier.",
 	"author": "Brikcss <https://github.com/brikcss>",
 	"contributors": [
@@ -19,7 +19,7 @@
 		"css",
 		"spacing"
 	],
-	"main": "./dist/spacing.init.min.css",
+	"main": "./dist/spacing.min.css",
 	"files": [
 		"dist",
 		"src"
