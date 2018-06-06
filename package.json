@@ -1,6 +1,6 @@
 {
 	"name": "@brikcss/spacing",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "Spacing component to make creating spacing variables and classes in CSS easier.",
 	"author": "Brikcss <https://github.com/brikcss>",
 	"contributors": [
@@ -19,7 +19,7 @@
 		"css",
 		"spacing"
 	],
-	"main": "./dist/spacing.min.css",
+	"main": "./src/spacing.css",
 	"files": [
 		"dist",
 		"src"
@@ -62,7 +62,7 @@
 		"@brikcss/stakcss": "0.8.0",
 		"@brikcss/stakcss-bundler-copy": "0.1.0",
 		"@brikcss/stakcss-bundler-postcss": "0.4.0",
-		"@brikcss/stylelint-config-css": "0.0.7",
+		"@brikcss/stylelint-config-css": "0.1.2",
 		"@brikcss/watcher-cli": "1.0.0",
 		"@commitlint/cli": "7.0.0",
 		"autoprefixer": "8.6.0",

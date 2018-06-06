@@ -66,9 +66,9 @@ Spacing component to make creating spacing variables and classes in CSS easier.
 
 2. Include desired file(s) in your app:
 
-	- `./dist/spacing.css` and `./dist/spacing.min.css` are precompiled with PostCSS. Include one of these to accept all defaults.
-	- `./src/spacing.css` is the source CSS. Use this as an example, with the spacing mixin, to generate your own custom classes.
-	- `./src/mixins/spacing.js` is the spacing mixin. Use this to generate your own custom classes.
+	- _PostCSS with [postcss-import](https://github.com/postcss/postcss-import)_: `@import '@brickss/spacing';`
+	- _Precompiled:_ Include `./dist/spacing.min.css` for a version precompiled to vanilla CSS.
+	- _Custom:_ To generate your own custom spacing classes, use the [spacing @mixin](./src/mixins/spacing.js) and follow the [source CSS](./src/colors.css) as an example.
 
 ## Spacing mixin usage
 
